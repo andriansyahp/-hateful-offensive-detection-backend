@@ -1,7 +1,11 @@
+pandas
 numpy
 nltk
+matplotlib
+plotly
+sklearn
 emoji
-tensorflow
+tensorflow-cpu
 pydantic
 fastapi
 uvicorn
