@@ -1,9 +1,5 @@
-pandas
 numpy
 nltk
-matplotlib
-plotly
-sklearn
 emoji
 tensorflow-cpu
 pydantic
