@@ -2,6 +2,7 @@ from tensorflow.python.keras.preprocessing.sequence import pad_sequences
 from nltk.corpus import stopwords
 from pydantic import BaseModel
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 import re
 import html
@@ -15,6 +16,15 @@ import pickle
 nltk.download('stopwords')
 
 app = FastAPI()
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 model = tf.keras.models.load_model('model')
 with open('model/tokenizer.pickle', 'rb') as handle:
